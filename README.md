@@ -77,8 +77,8 @@ curl -fsSL https://raw.githubusercontent.com/mishanefedov/skill-issue/main/insta
 #   /plugin marketplace add mishanefedov/skill-issue
 #   /plugin install skill-issue@skill-issue
 
-# after the package is on npm:
-npx skill-issue ~/.claude/skills
+# from npm (published):
+npx @misha_misha/skill-issue ~/.claude/skills
 ```
 
 ### Works with

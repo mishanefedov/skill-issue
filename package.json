@@ -1,6 +1,7 @@
 {
-	"name": "skill-issue",
+	"name": "@misha_misha/skill-issue",
 	"version": "0.1.0",
+	"publishConfig": { "access": "public" },
 	"description": "Lint coding-agent skills for activation: find skills too vague to fire and skills that collide so one silently never runs.",
 	"type": "module",
 	"license": "MIT",

@@ -18,7 +18,7 @@ tool that loads `SKILL.md`-format skills.
 - [Claude Code plugin](https://github.com/mishanefedov/skill-issue#install): `/plugin marketplace add mishanefedov/skill-issue` then `/plugin install skill-issue@skill-issue` (works the moment the repo is public)
 - One line, any agent: `curl -fsSL https://raw.githubusercontent.com/mishanefedov/skill-issue/main/install.sh | bash`
 - Cross-agent skill doc: `npx skills add mishanefedov/skill-issue --agent claude-code`
-- [npm](https://github.com/mishanefedov/skill-issue#install) (once published): `npm install -g skill-issue` (or `npx skill-issue ~/.claude/skills`)
+- [npm](https://github.com/mishanefedov/skill-issue#install) (once published): `npm install -g @misha_misha/skill-issue` (or `npx @misha_misha/skill-issue ~/.claude/skills`)
 
 ## Usage
 

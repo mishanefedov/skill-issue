@@ -43,10 +43,10 @@ platform, otherwise clones + builds with Bun).
 Ships the engine with the plugin and registers the skill. Works the moment the
 repo's default branch has the code.
 
-## Path D — no install, run once (after the package is on npm)
+## Path D — no install, run once (npm)
 
 ```bash
-npx skill-issue ~/.claude/skills      # or: bunx skill-issue ~/.claude/skills
+npx @misha_misha/skill-issue ~/.claude/skills      # or: bunx @misha_misha/skill-issue ~/.claude/skills
 ```
 
 ## Use it
