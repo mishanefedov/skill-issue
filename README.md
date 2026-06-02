@@ -48,54 +48,37 @@ You tweak the description, reload, retry, guess. There was no tool that answered
 two skills that compete for the same intent, where installing both means one
 silently never runs and its author never finds out.
 
-## Self-install (just tell your agent)
+## Install — clone + setup (the gstack / gbrain way)
 
-skill-issue onboards itself. Say to Claude Code (or any coding agent):
-
-> use skill-issue to audit my skills
-
-and point it at [`INSTALL_FOR_AGENTS.md`](INSTALL_FOR_AGENTS.md) — an
-agent-executable runbook. It will install the skill + CLI and run the audit. No
-manual steps.
-
-## Install (manual)
-
-skill-issue is both a **skill** (the audit logic) and a small, dependency-free
-**CLI** (the engine). The CLI is a single bundle that runs on plain Node.
-
-**Claude Code plugin** — works the moment the repo is public, no npm needed:
-
-```text
-/plugin marketplace add mishanefedov/skill-issue
-/plugin install skill-issue@skill-issue
-/reload-plugins
-```
-
-**One line, any agent** — puts `skill-issue` on PATH and registers the skill with
-every coding agent on the machine (uses a prebuilt binary if a release has one,
-else clones + builds with Bun):
+skill-issue installs like gstack and gbrain: clone the repo, run `./setup`. One
+line, any agent:
 
 ```bash
+git clone https://github.com/mishanefedov/skill-issue ~/.skill-issue \
+  && cd ~/.skill-issue && ./setup
+```
+
+`./setup` runs `bun install`, puts `skill-issue` on PATH (`bun link`), and
+symlinks the skill into every coding agent on the machine (`~/.claude/skills`,
+`~/.codex/skills`, opencode, Factory, Cursor, Kiro, `~/.agents/skills`). Requires
+[Bun](https://bun.sh) + Git. Re-run after `git pull` to update.
+
+**Self-install:** tell any agent *"use skill-issue to audit my skills"* and point
+it at [`INSTALL_FOR_AGENTS.md`](INSTALL_FOR_AGENTS.md) — it runs the clone + setup
+itself, then the audit. No manual steps.
+
+### Other ways
+
+```bash
+# one line, no clone shown (binary fast-path → Bun source fallback):
 curl -fsSL https://raw.githubusercontent.com/mishanefedov/skill-issue/main/install.sh | bash
-```
 
-**Cross-agent skill doc** via [Vercel Labs' `skills` CLI](https://github.com/vercel-labs/skills):
+# Claude Code plugin (no Bun, no clone):
+#   /plugin marketplace add mishanefedov/skill-issue
+#   /plugin install skill-issue@skill-issue
 
-```bash
-npx skills add mishanefedov/skill-issue --agent claude-code
-```
-
-**npm** (once published):
-
-```bash
-npm install -g skill-issue        # or run once: npx skill-issue ~/.claude/skills
-```
-
-**From source:**
-
-```bash
-git clone https://github.com/mishanefedov/skill-issue
-cd skill-issue && ./setup          # bun install + bun link + register with every agent
+# after the package is on npm:
+npx skill-issue ~/.claude/skills
 ```
 
 ### Works with
