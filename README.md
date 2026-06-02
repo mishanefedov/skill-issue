@@ -54,6 +54,9 @@ You tweak the description, reload, retry, guess. There was no tool that answered
 two skills that compete for the same intent, where installing both means one
 silently never runs and its author never finds out.
 
+New to this? Read [**Why won't my skill fire?**](docs/why-wont-my-skill-fire.md)
+— the failure modes and how to diagnose each in ten seconds.
+
 ## Install — clone + setup (the gstack / gbrain way)
 
 skill-issue installs like gstack and gbrain: clone the repo, run `./setup`. One
@@ -85,6 +88,9 @@ curl -fsSL https://raw.githubusercontent.com/mishanefedov/skill-issue/main/insta
 
 # from npm (published):
 npx @misha_misha/skill-issue ~/.claude/skills
+
+# Homebrew (macOS/Linux):
+brew install mishanefedov/skill-issue/skill-issue
 ```
 
 ### Works with
