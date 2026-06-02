@@ -24,3 +24,10 @@ test("a set of distinct skills produces no collisions", () => {
 	const collisions = findCollisions(loadSkills(join(import.meta.dir, "fixtures/skills")));
 	expect(collisions).toHaveLength(0);
 });
+
+test("skills that share only boilerplate do NOT chain into a mega-cluster", () => {
+	// Regression: 5 skills with distinct intents but identical voice-trigger /
+	// "proactively suggest" boilerplate must not be merged on that shared filler.
+	const collisions = findCollisions(loadSkills(join(import.meta.dir, "fixtures/boilerplate")));
+	expect(collisions).toHaveLength(0);
+});

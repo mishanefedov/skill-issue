@@ -78,6 +78,7 @@ export function loadSkills(root: string): Skill[] {
 	}
 
 	const skills: Skill[] = [];
+	const seenNames = new Set<string>();
 	for (const c of byName.values()) {
 		let content: string;
 		try {
@@ -86,12 +87,12 @@ export function loadSkills(root: string): Skill[] {
 			continue;
 		}
 		const fm = parseFrontmatter(content);
-		skills.push({
-			name: fm.name || c.name,
-			file: c.file,
-			description: fm.description,
-			body: fm.body,
-		});
+		// Two different dirs can declare the same frontmatter name (a skill and a
+		// mirror copy of it). The agent only loads one — keep the first.
+		const resolved = fm.name || c.name;
+		if (seenNames.has(resolved)) continue;
+		seenNames.add(resolved);
+		skills.push({ name: resolved, file: c.file, description: fm.description, body: fm.body });
 	}
 	skills.sort((a, b) => a.name.localeCompare(b.name));
 	return skills;
