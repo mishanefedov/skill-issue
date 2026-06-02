@@ -1,0 +1,10 @@
+node_modules/
+bun.lockb
+*.log
+.DS_Store
+.env
+.env.*
+dist/
+.serena/
+*.tgz
+.private/
