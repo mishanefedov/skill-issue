@@ -4,7 +4,8 @@ bun.lockb
 .DS_Store
 .env
 .env.*
-dist/
+dist/*
+!dist/skill-issue.mjs
 .serena/
 *.tgz
 .private/

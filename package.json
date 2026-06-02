@@ -1,0 +1,37 @@
+{
+	"name": "skill-issue",
+	"version": "0.1.0",
+	"description": "Lint coding-agent skills for activation: find skills too vague to fire and skills that collide so one silently never runs.",
+	"type": "module",
+	"license": "MIT",
+	"author": "mishanefedov",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mishanefedov/skill-issue.git"
+	},
+	"homepage": "https://github.com/mishanefedov/skill-issue",
+	"bugs": "https://github.com/mishanefedov/skill-issue/issues",
+	"keywords": ["claude-code", "claude-plugin", "agent-skills", "skill", "activation", "lint", "codex", "agents"],
+	"bin": {
+		"skill-issue": "dist/skill-issue.mjs"
+	},
+	"files": ["dist", "README.md", "LICENSE", "llms.txt"],
+	"scripts": {
+		"skill-issue": "bun run src/cli.ts",
+		"build": "bun run scripts/build.ts",
+		"prepack": "bun run scripts/build.ts",
+		"test": "bun test",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome check .",
+		"format": "biome format --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/bun": "latest",
+		"typescript": "^5"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"trustedDependencies": ["@biomejs/biome"]
+}
