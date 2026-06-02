@@ -48,26 +48,22 @@ You tweak the description, reload, retry, guess. There was no tool that answered
 two skills that compete for the same intent, where installing both means one
 silently never runs and its author never finds out.
 
-## Try it (no install)
+## Self-install (just tell your agent)
 
-```bash
-npx skill-issue ~/.claude/skills        # or: bunx skill-issue ~/.claude/skills
-```
+skill-issue onboards itself. Say to Claude Code (or any coding agent):
 
-Point it at any skills folder and see what's too vague to fire before you keep it.
+> use skill-issue to audit my skills
 
-## Install
+and point it at [`INSTALL_FOR_AGENTS.md`](INSTALL_FOR_AGENTS.md) — an
+agent-executable runbook. It will install the skill + CLI and run the audit. No
+manual steps.
+
+## Install (manual)
 
 skill-issue is both a **skill** (the audit logic) and a small, dependency-free
 **CLI** (the engine). The CLI is a single bundle that runs on plain Node.
 
-**npm (global command):**
-
-```bash
-npm install -g skill-issue
-```
-
-**Claude Code plugin** (no clone):
+**Claude Code plugin** — works the moment the repo is public, no npm needed:
 
 ```text
 /plugin marketplace add mishanefedov/skill-issue
@@ -75,11 +71,31 @@ npm install -g skill-issue
 /reload-plugins
 ```
 
+**One line, any agent** — puts `skill-issue` on PATH and registers the skill with
+every coding agent on the machine (uses a prebuilt binary if a release has one,
+else clones + builds with Bun):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/mishanefedov/skill-issue/main/install.sh | bash
+```
+
+**Cross-agent skill doc** via [Vercel Labs' `skills` CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add mishanefedov/skill-issue --agent claude-code
+```
+
+**npm** (once published):
+
+```bash
+npm install -g skill-issue        # or run once: npx skill-issue ~/.claude/skills
+```
+
 **From source:**
 
 ```bash
 git clone https://github.com/mishanefedov/skill-issue
-cd skill-issue && bun install && bun link
+cd skill-issue && ./setup          # bun install + bun link + register with every agent
 ```
 
 ### Works with
