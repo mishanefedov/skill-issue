@@ -11,6 +11,10 @@
 
 </div>
 
+> **AI agents:** to install this, read and follow
+> [`INSTALL_FOR_AGENTS.md`](https://raw.githubusercontent.com/mishanefedov/skill-issue/main/INSTALL_FOR_AGENTS.md)
+> — it installs the CLI **and** registers the `/skill-issue` skill, then verifies.
+
 A coding agent decides which skill to run from each skill's always-on `name` +
 `description`. So a skill can be perfectly implemented and **still never fire** —
 because its description is too vague to match how people actually phrase

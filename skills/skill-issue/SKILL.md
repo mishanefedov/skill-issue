@@ -10,7 +10,7 @@ description: >
   writing or installing a new SKILL.md.
 allowed-tools: Bash(skill-issue:*)
 license: MIT
-compatibility: Needs the skill-issue CLI on PATH (npm i -g skill-issue, or bunx skill-issue).
+compatibility: Needs the skill-issue CLI on PATH (npm i -g @misha_misha/skill-issue, or bunx @misha_misha/skill-issue).
 ---
 
 # skill-issue — skill activation audit
@@ -57,5 +57,5 @@ hook.
 Heuristic, offline, conservative: only empty/duplicated descriptions are errors;
 everything else is a graded warning. It does NOT yet run the real agent loop to
 observe selection (the v2 replay roadmap) — it predicts from the metadata the
-picker reads. If `skill-issue: command not found`, run `npx skill-issue <dir>`
-or install with `npm i -g skill-issue`.
+picker reads. If `skill-issue: command not found`, run `npx @misha_misha/skill-issue <dir>`
+or install with `npm i -g @misha_misha/skill-issue`.
