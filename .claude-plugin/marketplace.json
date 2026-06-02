@@ -1,0 +1,19 @@
+{
+	"name": "skill-issue",
+	"owner": { "name": "mishanefedov" },
+	"description": "skill-issue — lint coding-agent skills for activation: vague descriptions and trigger collisions.",
+	"plugins": [
+		{
+			"name": "skill-issue",
+			"source": "./",
+			"description": "Find out why your skill won't fire: grade descriptions A–F, simulate which skill fires for a prompt, and report collisions where one skill silently shadows another.",
+			"version": "0.1.0",
+			"author": { "name": "mishanefedov" },
+			"homepage": "https://github.com/mishanefedov/skill-issue",
+			"repository": "https://github.com/mishanefedov/skill-issue",
+			"license": "MIT",
+			"keywords": ["claude-code", "agent-skills", "activation", "lint"],
+			"category": "dev-tools"
+		}
+	]
+}

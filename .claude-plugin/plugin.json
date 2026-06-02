@@ -1,0 +1,9 @@
+{
+	"name": "skill-issue",
+	"description": "Find out why your skill won't fire — lint coding-agent skills for activation: vague descriptions that never match, and collisions where one skill silently shadows another.",
+	"version": "0.1.0",
+	"author": { "name": "mishanefedov" },
+	"homepage": "https://github.com/mishanefedov/skill-issue",
+	"repository": "https://github.com/mishanefedov/skill-issue",
+	"license": "MIT"
+}
