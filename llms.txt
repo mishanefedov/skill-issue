@@ -30,6 +30,7 @@ tool that loads `SKILL.md`-format skills.
 
 ## Docs
 
+- [Why won't my skill fire?](https://github.com/mishanefedov/skill-issue/blob/main/docs/why-wont-my-skill-fire.md): the canonical explainer — the activation surface, the failure modes (empty description, no "use when" clause, too-thin/generic, collisions), and how to diagnose each
 - [README](https://github.com/mishanefedov/skill-issue/blob/main/README.md): what it catches, how scoring works, roadmap
 - [SPEC](https://github.com/mishanefedov/skill-issue/blob/main/SPEC.md): design + architecture
 - [SKILL.md](https://github.com/mishanefedov/skill-issue/blob/main/skills/skill-issue/SKILL.md): the skill definition
