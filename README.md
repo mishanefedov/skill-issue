@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/skill-issue-header.png" alt="skill-issue — find out why your skill won't fire" width="100%">
+
 # skill-issue
 
 **find out why your skill won't fire**
