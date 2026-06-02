@@ -16,6 +16,9 @@ fi
 echo "→ installing dependencies"
 ( cd "$ROOT" && bun install >/dev/null )
 
+echo "→ building the Node bundle (so the command runs without Bun afterward)"
+( cd "$ROOT" && bun run build >/dev/null )
+
 echo "→ exposing 'skill-issue' on PATH (bun link)"
 ( cd "$ROOT" && bun link >/dev/null )
 

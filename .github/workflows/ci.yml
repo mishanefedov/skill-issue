@@ -17,5 +17,9 @@ jobs:
       - run: bun run lint
       - run: bun test
       - run: bun run typecheck
-      # Dogfood: skill-issue audits its own bundled skill (no error expected).
-      - run: bun run src/cli.ts skills
+      # The committed Node bundle must match the source (it ships in the plugin
+      # so the launcher runs without Bun). Fail if someone forgot to rebuild.
+      - run: bun run build
+      - run: git diff --exit-code dist/skill-issue.mjs || (echo "dist/skill-issue.mjs is stale — run 'bun run build' and commit it" && exit 1)
+      # Dogfood: the launcher audits its own bundled skill on Node (no error).
+      - run: node dist/skill-issue.mjs skills
